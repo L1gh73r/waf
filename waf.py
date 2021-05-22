@@ -36,11 +36,17 @@ def loadfile(addr):
 	file.close()
 	file1.close()
 	#rm_cmd = "rm -rf "+addr #进行linux的系统命令执行，在这里改为
-	print addr
-	addr1 = addr + ","
-	rm_cmd = "echo "+addr1+" >> append_file.txt"
-	su = subprocess.Popen(rm_cmd,shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-	su.communicate()
+	#print addr
+	addr1 = addr+"\n"
+	file2 = open("append_file.txt",'a+')
+	try :
+		append_file = file2.read()
+	except :
+		append_file = "null"
+	if addr1 not in append_file:
+		file2.write(addr1)
+	file2.close()
+		
 
 if __name__ == '__main__':
 	while True:
