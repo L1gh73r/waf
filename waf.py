@@ -2,11 +2,12 @@
 import sys,subprocess,os
 #查找最近10分钟被修改的文件
 def scanfile():
-	#command: find -name '*.php' -mmin -10
-	command = "find -name \'*.php\' -mmin -10"
+	#command: find -name '*.php' -mmin -1
+	command = "find -name \'*.php\' -mmin -1"
 	su = subprocess.Popen(command,shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 	STDOUT,STDERR = su.communicate()
 	list = STDOUT.split("\n")
+	#print(list)
 	#print str(list)
 	#将文件处理成list类型然后返回。
 	return list
@@ -35,11 +36,11 @@ def loadfile(addr):
 	file.close()
 	file1.close()
 	#rm_cmd = "rm -rf "+addr #进行linux的系统命令执行，在这里改为
-	addr1 = addr + "\n"
-	rm_cmd = "echo "+addr1+" > append_file"
+	print addr
+	addr1 = addr + ","
+	rm_cmd = "echo "+addr1+" >> append_file.txt"
 	su = subprocess.Popen(rm_cmd,shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 	su.communicate()
-	print "loadfile over : "+addr
 
 if __name__ == '__main__':
 	while True:
