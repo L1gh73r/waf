@@ -1,0 +1,8 @@
+eval
+assert
+preg_replace
+create_function
+array_map
+call_user_func
+call_user_func_array
+array_filter
