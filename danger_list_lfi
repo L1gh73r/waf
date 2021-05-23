@@ -1,0 +1,8 @@
+highlight_file
+show_source
+print_r
+readfile
+include
+include_once
+require
+require_once
