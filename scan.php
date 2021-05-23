@@ -31,7 +31,7 @@ function waf() {
         "File" => $files,
         "Header" => $header
     );
-    //deal with
+    //deal with 
     // $pattern = "select|insert|update|delete|and|or|\'|\/\*|\*|\.\.\/|\.\/|union|into|load_file|outfile|dumpfile|sub|hex";
     // $pattern.= "|file_put_contents|fwrite|curl|system|eval|assert";
     // $pattern.= "|passthru|exec|system|chroot|scandir|chgrp|chown|shell_exec|proc_open|proc_get_status|popen|ini_alter|ini_restore";
